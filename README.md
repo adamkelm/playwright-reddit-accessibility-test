@@ -5,7 +5,7 @@
 [![Playwright](https://img.shields.io/badge/Playwright-1.56-green.svg)](https://playwright.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> A comprehensive accessibility test automation framework for Reddit built with Playwright, axe-core, and TypeScript, demonstrating professional QA engineering practices including Page Object Model (POM), WCAG compliance testing, and detailed violation documentation.
+> Accessibility test automation framework for Reddit built with Playwright, axe-core, and TypeScript. Discovers real WCAG violations through automated scanning with POM architecture, comprehensive violation reporting, and professional accessibility testing patterns.
 
 ## Table of Contents
 

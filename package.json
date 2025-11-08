@@ -1,7 +1,7 @@
 {
   "name": "playwright-reddit-accessibility-test",
   "version": "1.0.0",
-  "description": "A comprehensive accessibility test automation framework for Reddit built with Playwright, axe-core, and TypeScript",
+  "description": "Accessibility test automation framework for Reddit built with Playwright, axe-core, and TypeScript. Discovers real WCAG violations through automated scanning with POM architecture, comprehensive violation reporting, and professional accessibility testing patterns.",
   "main": "index.js",
   "scripts": {
     "test": "playwright test",

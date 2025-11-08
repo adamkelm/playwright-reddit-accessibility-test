@@ -20,6 +20,7 @@ type Pages = {
 export const test = base.extend<Pages>({
   page: async ({ page }, use) => {
     await page.goto("/");
+    await page.waitForLoadState();
     await use(page);
   },
   homePage: async ({ page }, use) => {

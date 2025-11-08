@@ -4,15 +4,16 @@ import { createHtmlReport } from "axe-html-reporter";
 import { HomePage } from "../pages/home";
 import { PopularPage } from "../pages/popular";
 import { ExplorePage } from "../pages/explore";
+import { AxeResults } from "axe-core";
 
 type Pages = {
   homePage: HomePage;
   popularPage: PopularPage;
   explorePage: ExplorePage;
   makeAxeBuilder: () => AxeBuilder;
-  createAxeReport: (results: any, pageName: string) => void;
+  createAxeReport: (results: AxeResults, pageName: string) => void;
   attachAccessibilityResults: (
-    results: any,
+    results: AxeResults,
     testInfo: TestInfo
   ) => Promise<void>;
 };
@@ -46,8 +47,8 @@ export const test = base.extend<Pages>({
 
     await use(makeAxeBuilder);
   },
-  createAxeReport: async ({}, use) => {
-    const createAxeReport = (results: any, pageName: string) => {
+  createAxeReport: async (_fixtures, use) => {
+    const createAxeReport = (results: AxeResults, pageName: string) => {
       createHtmlReport({
         results: results,
         options: {
@@ -60,9 +61,9 @@ export const test = base.extend<Pages>({
 
     await use(createAxeReport);
   },
-  attachAccessibilityResults: async ({}, use) => {
+  attachAccessibilityResults: async (_fixtures, use) => {
     const attachAccessibilityResults = async (
-      results: any,
+      results: AxeResults,
       testInfo: TestInfo
     ) => {
       await testInfo.attach("accessibility-scan-results", {

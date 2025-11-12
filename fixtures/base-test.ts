@@ -47,7 +47,8 @@ export const test = base.extend<Pages>({
 
     await use(makeAxeBuilder);
   },
-  createAxeReport: async (_fixtures, use) => {
+  // eslint-disable-next-line no-empty-pattern
+  createAxeReport: async ({}, use) => {
     const createAxeReport = (results: AxeResults, pageName: string) => {
       createHtmlReport({
         results: results,
@@ -61,7 +62,8 @@ export const test = base.extend<Pages>({
 
     await use(createAxeReport);
   },
-  attachAccessibilityResults: async (_fixtures, use) => {
+  // eslint-disable-next-line no-empty-pattern
+  attachAccessibilityResults: async ({}, use) => {
     const attachAccessibilityResults = async (
       results: AxeResults,
       testInfo: TestInfo
